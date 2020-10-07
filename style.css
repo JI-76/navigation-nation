@@ -32,6 +32,22 @@ body {
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.7);
+  /* full screen but off the page */
+  transform: translateX(-100vw);
+}
+
+.overlay-slide-right {
+  /* provide a duration to make the tranform appear smoother */
+  transition: all 04.s ease-in-out;
+  /* full screen back on page */
+  transform: translateX(0);
+}
+
+.overlay-slide-left {
+  /* provide a duration to make the tranform appear smoother */
+  transition: all 08.s ease-in-out;
+  /* full screen off the page */
+  transform: translateX(-100vw);
 }
 
 /* Nav Menu Items */
