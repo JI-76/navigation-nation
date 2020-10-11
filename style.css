@@ -17,7 +17,7 @@ html {
 body {
   margin: 0;
   background: #000;
-  font-family: : Nunito, sans-serif;
+  font-family: Nunito, sans-serif;
 }
 
 /* --- Navigation Menu ------------------------------ */
@@ -25,7 +25,7 @@ body {
 /* Overlay  */
 .overlay {
   position: fixed;
-  /* keep on on top of everything - most elements have a z-index of 1 */
+  /* keep on on top of everything - most elements have a default z-index of 1 */
   z-index: 9;
   top: 0;
   left: 0;
@@ -37,14 +37,14 @@ body {
 }
 
 .overlay-slide-right {
-  /* provide a duration to make the tranform appear smoother */
+  /* provide a duration to make the slide-in tranform appear smoother */
   transition: all 04.s ease-in-out;
   /* full screen back on page */
   transform: translateX(0);
 }
 
 .overlay-slide-left {
-  /* provide a duration to make the tranform appear smoother */
+  /* provide a duration to make the slide-out tranform appear smoother */
   transition: all 08.s ease-in-out;
   /* full screen off the page */
   transform: translateX(-100vw);
@@ -74,7 +74,7 @@ nav ul li {
   overflow: hidden;
 }
 
-/* Style the Anchor element in each List item */
+/* Style the Anchor element in each Unordered List List item */
 nav li a {
   position: relative;
   top: 45%;
@@ -87,8 +87,8 @@ nav li a {
   text-align: center;
 }
 
-/* pseudo-class for List Item element hover behavior */
-nav li:hover {
+/* pseudo-class for List Item Anchor element hover behavior */
+nav li a:hover {
   transform: scale(1.2);
 }
 
@@ -128,6 +128,80 @@ nav li:nth-of-type(4) {
 
 nav li:nth-of-type(5) {
   background-color: var(--navColor5);
+}
+
+/* Slide-in animation with staggered delay for each Nav Item */
+.slide-in-1 {
+  /* name; duration = 0.4s; timing function = linear aka "even speed"; delay = 0.2 fill-mode = both */
+  animation: slide-in 0.4s linear 0.2s both;
+}
+
+.slide-in-2 {
+  /* name; duration = 0.4s; timing function = linear; delay = 0.4s fill-mode = both aka "back-and-forth" */
+  animation: slide-in 0.4s linear 0.4s both;
+}
+
+.slide-in-3 {
+  /* name; duration = 0.4s; timing function = linear; delay = 0.6s fill-mode = both aka "back-and-forth" */
+  animation: slide-in 0.4s linear 0.6s both;
+}
+
+.slide-in-4 {
+  /* name; duration = 0.4s; timing function = linear; delay = 0.8s fill-mode = both aka "back-and-forth" */
+  animation: slide-in 0.4s linear 0.8s both;
+}
+
+.slide-in-5 {
+  /* name; duration = 0.4s; timing function = linear; delay = 1s fill-mode = both aka "back-and-forth" */
+  animation: slide-in 0.4s linear 1s both;
+}
+
+/* animation for each Nav Item to slide-in*/
+@keyframes slide-in {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Slide-out animation with staggered delay for each Nav Item */
+.slide-out-1 {
+  /* name; duration = 0.3s; timing function = linear aka "even speed"; delay = 0.5 fill-mode = both aka "back-and-forth" */
+  animation: slide-out 0.3s linear 0.5s both;
+}
+
+.slide-out-2 {
+  /* name; duration = 0.3s; timing function = linear; delay = 0.4s fill-mode = both aka "back-and-forth" */
+  animation: slide-out 0.3s linear 0.4s both;
+}
+
+.slide-out-3 {
+  /* name; duration = 0.3s; timing function = linear; delay = 0.3s fill-mode = both aka "back-and-forth" */
+  animation: slide-out 0.3s linear 0.3s both;
+}
+
+.slide-out-4 {
+  /* name; duration = 0.3s; timing function = linear; delay = 0.2s fill-mode = both aka "back-and-forth" */
+  animation: slide-out 0.3s linear 0.2s both;
+}
+
+.slide-out-5 {
+  /* name; duration = 0.3s; timing function = linear; delay = 0.1s fill-mode = both aka "back-and-forth" */
+  animation: slide-out 0.3s linear 0.1s both;
+}
+
+/* animation for each Nav Item to slide-out */
+@keyframes slide-out {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
 }
 
 /* --- Menu Bars ------------------------------------ */
